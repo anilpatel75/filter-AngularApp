@@ -1,6 +1,6 @@
-import { DataService } from './../data.service';
+import { DataService } from '../Services and Directives/data.service';
 import { Component, OnInit, ViewChild, ElementRef} from '@angular/core';
-import { ActivatedRoute, Router } from '../../../node_modules/@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-view3',
@@ -42,14 +42,10 @@ export class View3Component implements OnInit {
     this.department = param.Department;
   });
   
-    let divToMeasureWidth = this.divToMeasureElement;
-  console.log(divToMeasureWidth)
-  
+  let divToMeasureWidth = this.divToMeasureElement;
+  console.log(divToMeasureWidth.nativeElement.clientWidth)
 }
-ngOnChanges() {
- 
-  
-}
+
           getData(item)
           {
              for(let i=0;i<item.length;i++)
@@ -88,16 +84,15 @@ getDepData(DepData)
             this.result = this.finalDep[0].slice(0,4);
           }
 }
-
-      onClick()
-      {
-        this.result = this.finalDep[0];
-        this.activity = true;
-      }
-          backTOView2()
-          {
-          this.router.navigate(['/view2'])
-          }
+         onClick(){
+                    this.result = this.finalDep[0];
+                    this.activity = true;
+                  }
+          backTOView2(){
+                    this.router.navigate(['/view2'])
+                  }
+                  
+         
  
 
 }

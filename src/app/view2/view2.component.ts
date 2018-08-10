@@ -1,7 +1,8 @@
-import { DataService } from './../data.service';
+
 import { Http } from '@angular/http';
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { Router } from '../../../node_modules/@angular/router';
+import { Router } from '@angular/router';
+import { DataService } from '../Services and Directives/data.service';
 
 @Component({
   selector: 'app-view2',
@@ -13,7 +14,7 @@ export class View2Component implements OnInit {
    constructor(private dataService :DataService, private router:Router) { }
 
   ngOnInit() {
-              this.departmentData = this.dataService.getDepartmentData()
+              this.dataService.getDepartmentData()
               .subscribe((departmentData=>
                 {
                   this.departmentData = departmentData["departments"];

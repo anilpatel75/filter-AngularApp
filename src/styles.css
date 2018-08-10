@@ -206,9 +206,8 @@ body {
 .department-name-tooltip:before{
         content: '';
         display: block;
-        position: absolute;
+        position: inherit;
         bottom: -.6vw;
-     
         width: 0; 
         height: 0; 
         border-left: .8vw solid transparent;

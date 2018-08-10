@@ -1,14 +1,14 @@
     
         <section class="filter-list" >
                 <a class="btn btn-expand"(click)="backTOView2()">></a>
-                <div  class="department-list" >
-                    <div class="department" >
+                <div  class="department-list"#divToMeasure >
+                    <div class="department"  >
                         <div class="dept-name" >{{department}}</div>
                         <div class="subjects-wrapper"   >
-                            <div class="subject-name active" >{{subject}}</div>
-                            <div class="subject-name"  *ngFor="let item of result" #divToMeasure >
+                             <div class="subject-name active" >{{subject}}</div>
+                             <div class="subject-name"  *ngFor="let item of result" >
                               {{item}}</div>
-                            <div class="additional-subject" *ngIf ="!activity" >
+                              <div class="additional-subject" *ngIf ="!activity" >
                                 <a (click)="onClick()" >+{{num}}more</a>
                              </div>
                         </div>
@@ -17,7 +17,7 @@
                </div>
         </section>
     
-    <section>
+    
         <div class="data-wrapper">
                 <div *ngIf="finalData?.length > 0; else loggedOut">
                         <ul class="filtered-student">
@@ -44,15 +44,10 @@
                                   </li>
                             </ul>
                       </div>
-                      
                       <ng-template #loggedOut>
-                      <div><h2 style="text-align: center">No data Available</h2></div>
+                      <div><h2 style="text-align: center">
+                          No data Available</h2></div>
                       </ng-template>
-                      
-        
-       
-       
-           
         </div>
-    </section>
+   
    

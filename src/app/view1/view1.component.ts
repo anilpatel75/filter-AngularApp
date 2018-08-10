@@ -1,5 +1,6 @@
-import { DataService } from './../data.service';
+
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../Services and Directives/data.service';
 
 @Component({
   selector: 'app-view1',

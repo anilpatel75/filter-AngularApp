@@ -1,0 +1,35 @@
+
+  
+    <section class="filter-list expanded">
+     <a class="btn btn-close" routerLink="/view1"><p >x</p></a> 
+          <div class="department-list">
+               <div class="department" *ngFor="let item of departmentData">
+                  
+                   <div class="dept-name" appTooltip 
+                    [tooltipTitle]='item.name' >{{item.name}}
+                        <app-tooltip-container> </app-tooltip-container>
+                   </div>
+                       <div class="subjects-wrapper">
+                          <div class="subject-name"
+                              *ngFor="let subname of item.subjects" 
+                              (click)="OnSubjectClick(item.name,subname)">Subject1
+                          </div>
+                       </div>
+                   </div>
+                   <div class="department all">
+                    <div class="dept-name">All Departments</div>
+                    <div class="subjects-wrapper">
+                        <div class="subject-name active">All Subjects</div>
+                    </div>
+                </div>
+            
+              </div>
+             
+             
+            
+             
+            
+    </section>
+     
+  
+

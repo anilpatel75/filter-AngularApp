@@ -1,0 +1,58 @@
+    
+        <section class="filter-list" >
+                <a class="btn btn-expand"(click)="backTOView2()">></a>
+                <div  class="department-list" >
+                    <div class="department" >
+                        <div class="dept-name" >{{department}}</div>
+                        <div class="subjects-wrapper"   >
+                            <div class="subject-name active" >{{subject}}</div>
+                            <div class="subject-name"  *ngFor="let item of result" #divToMeasure >
+                              {{item}}</div>
+                            <div class="additional-subject" *ngIf ="!activity" >
+                                <a (click)="onClick()" >+{{num}}more</a>
+                             </div>
+                        </div>
+                    </div>
+               
+               </div>
+        </section>
+    
+    <section>
+        <div class="data-wrapper">
+                <div *ngIf="finalData?.length > 0; else loggedOut">
+                        <ul class="filtered-student">
+                                <li *ngFor="let item of finalData; let i =index">
+                                    <span class="name">{{item.familyName}}, {{item.givenName}}</span>
+                                    <span class="dob">DOB:
+                                    <span class="value">{{item.dob | date: 'dd/MM/yyyy'}}</span>
+                                    </span>
+                                    <span class="admit-date">Admitted:
+                                    <span class="value">
+                                      {{item.admitDate | date: 'MMM dd,yyyy'}}
+                                    </span>
+                                    </span>
+                                    <span class="admit-date">Anticipated Graduation:
+                                    <span class="value">
+                                      {{item.anticipatedGraduationDate | date: 'MMM yyyy'}}
+                                    </span>
+                                    </span>
+                                    <span class="admit-date">Mentor:
+                                    <span class="value">
+                                      {{item.mentor.familyName}}, {{item.mentor.givenName}}
+                                    </span>
+                                    </span>
+                                  </li>
+                            </ul>
+                      </div>
+                      
+                      <ng-template #loggedOut>
+                      <div><h2 style="text-align: center">No data Available</h2></div>
+                      </ng-template>
+                      
+        
+       
+       
+           
+        </div>
+    </section>
+   

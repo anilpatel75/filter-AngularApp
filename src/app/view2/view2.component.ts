@@ -22,8 +22,8 @@ export class View2Component implements OnInit {
            }
          
           OnSubjectClick(department,subject)
-         {
-          this.router.navigate(
+           {
+            this.router.navigate(
             ['view3'],{queryParams:{Department:department, Subject:subject }})
          }
 

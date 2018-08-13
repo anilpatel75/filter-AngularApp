@@ -12,7 +12,7 @@ export class TooltipDirectiveDirective implements OnDestroy {
   
   @HostListener('mouseenter')
   onMouseEnter() {
-       console.log(this.element.nativeElement)
+      
       this.id = Math.floor(Math.random() * 10);
       this.tooltipService.components.push({ 
        ref: this.element, 

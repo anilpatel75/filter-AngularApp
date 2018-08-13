@@ -1,13 +1,17 @@
     
         <section class="filter-list" >
                 <a class="btn btn-expand"(click)="backTOView2()">></a>
-                <div  class="department-list"#divToMeasure >
+                <div  class="department-list" #divToMeasure >
                     <div class="department"  >
                         <div class="dept-name" >{{department}}</div>
                         <div class="subjects-wrapper"   >
-                             <div class="subject-name active" >{{subject}}</div>
-                             <div class="subject-name"  *ngFor="let item of result" >
-                              {{item}}</div>
+                             <div class="subject-name active">
+                               {{subject}}
+                              </div>
+                             <div class="subject-name"  
+                               *ngFor="let item of result;let i= index" 
+                               (click)="OnSubjectClick(item,i)">{{item}}
+                              </div>
                               <div class="additional-subject" *ngIf ="!activity" >
                                 <a (click)="onClick()" >+{{num}}more</a>
                              </div>
